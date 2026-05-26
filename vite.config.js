@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     host: true,
-    allowedHosts: 'all'
+    allowedHosts: 'portpoflio-5.onrender.com'
   }
 })
