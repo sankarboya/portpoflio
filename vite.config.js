@@ -3,6 +3,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   preview: {
     host: true,
-    allowedHosts: ['preview.allowedHosts']
+    allowedHosts: ["portpoflio-5.onrender.com"]
   }
 })
