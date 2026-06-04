@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./portfolio.css";
 
 const projects = [
@@ -9,6 +9,8 @@ const projects = [
       "Product listing, category browsing, details pages, and API loading states built with React Router and Axios.",
     tech: ["React", "Router", "Axios", "Bootstrap"],
     icon: "bi-bag-check",
+    live: "https://ecom-express-hbkc.onrender.com",
+    
   },
   {
     title: "Food Delivery",
@@ -17,6 +19,8 @@ const projects = [
       "Restaurant browsing, cart flow, checkout screens, authentication pages, and a clean ordering experience.",
     tech: ["React", "Context", "CSS", "Forms"],
     icon: "bi-cup-hot",
+    live: "https://food-delevery-jenq.onrender.com",
+    
   },
   {
     title: "Weather App",
@@ -25,9 +29,19 @@ const projects = [
       "Weather search interface with responsive cards, forecast details, and a focused information layout.",
     tech: ["React", "API", "Bootstrap", "UX"],
     icon: "bi-cloud-sun",
+    live: "https://weather-app-rp3z.onrender.com",
+    
+  },
+  {
+    title: "Chat App",
+    type: "Messaging App",
+    description:
+      "Responsive chat interface with conversation views, message bubbles, user-friendly layout, and clean React state handling.",
+    tech: ["React", "CSS", "State", "Responsive"],
+    icon: "bi-chat-dots",
+     live: "https://chat-47zu.onrender.com",
   },
 ];
-
 const skills = [
   { name: "React JS", icon: "bi-atom" },
   { name: "JavaScript", icon: "bi-filetype-js" },
@@ -177,7 +191,7 @@ export function Portfolio() {
           <div className="row align-items-center g-5">
             <div className="col-lg-7">
               <p className="eyebrow reveal">Frontend Developer</p>
-              <h1>Hi, I build clean React websites with beautiful UI.</h1>
+              <h1>Hi iam sankar , I build clean React websites with beautiful UI.</h1>
               <p className="hero-copy reveal reveal-delay-1">
                 I create responsive, modern, and user-friendly interfaces using
                 React, CSS, and Bootstrap. My focus is simple: make every screen
@@ -321,18 +335,44 @@ export function Portfolio() {
             {projects.map(project => (
               <div className="col-md-6 col-xl-4" key={project.title}>
                 <article className="project-card reveal">
-                  <div className="project-icon">
-                    <i className={`bi ${project.icon}`}></i>
-                  </div>
-                  <span>{project.type}</span>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="tech-list">
-                    {project.tech.map(item => (
-                      <small key={item}>{item}</small>
-                    ))}
-                  </div>
-                </article>
+  <div className="project-icon">
+    <i className={`bi ${project.icon}`}></i>
+  </div>
+
+  <span>{project.type}</span>
+  <h3>{project.title}</h3>
+  <p>{project.description}</p>
+
+  <div className="tech-list">
+    {project.tech.map(item => (
+      <small key={item}>{item}</small>
+    ))}
+  </div>
+ 
+  <div className="project-links mt-3 ">
+    {project.live && (
+      <a
+        href={project.live}
+        target="_blank"
+        rel="noreferrer"
+        className="btn btn-sm btn-primary"
+      >
+        Live Demo
+      </a>
+    )}
+
+    {project.github && (
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noreferrer"
+        className="btn btn-sm btn-outline-dark ms-2"
+      >
+        Code
+      </a>
+    )}
+  </div>
+</article>
               </div>
             ))}
           </div>
